@@ -59,7 +59,7 @@ OUTPUT FORMAT:
   });
   let text = response.text;
 
-  // Remove any surrounding ```json or ``` markers
+ 
   text = text.replace(/^\s*```json\s*/, "").replace(/\s*```\s*$/, "");
 
   try {

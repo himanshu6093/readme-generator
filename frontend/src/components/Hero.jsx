@@ -15,9 +15,7 @@ const Hero = () => {
         setLoading(true);
         try {
             const resp = await axios.post("https://readme-generator-kwfm.onrender.com/summary", { repoUrl });
-            // backend might return { readme, sections } or directly the sections object
             const data = resp.data.sections ?? resp.data;
-            // pass the generated data via React Router state
             navigate("/content", { state: { repoUrl, data } });
         } catch (err) {
             console.error(err);

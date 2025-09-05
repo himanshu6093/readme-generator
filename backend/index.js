@@ -43,11 +43,8 @@ app.post("/summary", async (req, res) => {
 
     const repoString = JSON.stringify(impData, null, 2);
 
-    // Gemini MUST return JSON now
     const readmeData = await Gemini(repoString);
-    
 
-    // Send the JSON back to frontend
     res.status(200).json({ repoUrl, sections: readmeData });
 
   } catch (err) {
